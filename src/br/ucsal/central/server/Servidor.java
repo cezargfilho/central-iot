@@ -42,7 +42,7 @@ public class Servidor {
 
 			while (true) {
 				Socket cliente = servidor.accept();
-				System.out.println("Novo cliente conectado a central CRIS DIAS (AGUENTAMOS TUDO PODE VIR BB): " + cliente.getInetAddress().getHostAddress());
+				System.out.println("Novo cliente conectado a central: " + cliente.getInetAddress().getHostAddress());
 				Thread t1 = new Thread(new ClienteHandler(cliente, this));
 				t1.start();
 			}

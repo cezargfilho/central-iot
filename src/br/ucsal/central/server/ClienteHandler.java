@@ -44,12 +44,11 @@ public class ClienteHandler implements Runnable {
 					servidor.solicitaColeta(container);
 
 				} else if (comando.toUpperCase().equalsIgnoreCase(servidor.CHEGUEI)) {
-					System.out.println("caminhao= " + linha);
 					for (Caminhao caminhao : servidor.getCaminhoesList()) {
 						if (caminhao.getId() == id) {
 							Container container = caminhao.getContainer();
 							new PrintStream(container.getOutputStream()).println(linha);
-							System.out.println("container " + container.getId() + " = " + linha);
+							System.out.println("caminhao " + container.getId() + " = " + linha);
 						}
 					}
 
