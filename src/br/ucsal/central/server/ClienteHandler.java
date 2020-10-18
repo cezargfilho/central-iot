@@ -21,7 +21,6 @@ public class ClienteHandler implements Runnable {
 
 	@Override
 	public void run() {
-		// Scanner scanner = new Scanner(cliente.getInputStream());
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 
@@ -48,7 +47,7 @@ public class ClienteHandler implements Runnable {
 						if (caminhao.getId() == id) {
 							Container container = caminhao.getContainer();
 							new PrintStream(container.getOutputStream()).println(linha);
-							System.out.println("caminhao " + container.getId() + " = " + linha);
+							System.out.println("caminhao " + caminhao.getId() + " = " + linha);
 						}
 					}
 
@@ -58,12 +57,12 @@ public class ClienteHandler implements Runnable {
 						if (caminhao.getId() == id) {
 							caminhao.setCondicao(servidor.LIVRE);
 							caminhao.setContainer(null);
-							System.out.println("caminhao livre " + caminhao.getId() + " = " + caminhao.getId());
+							System.out.println("caminhao livre = " + caminhao.getId());
 							break;
 						}
 					}
-
 				}
+
 			}
 		} catch (Exception e) {
 			Caminhao caminhao = null;
@@ -75,5 +74,6 @@ public class ClienteHandler implements Runnable {
 			servidor.getCaminhoesList().remove(caminhao);
 			e.printStackTrace();
 		}
+
 	}
 }

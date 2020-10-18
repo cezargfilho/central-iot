@@ -80,7 +80,7 @@ public class Servidor {
 					@Override
 					public void run() {
 						try {
-							System.out.println("conntainer " + container.getId() + " espera 10s");
+							System.out.println("container " + container.getId() + " espera 10s");
 							Thread.sleep(SEGUNDO);
 							solicitaColeta(container);
 						} catch (InterruptedException e) {
@@ -97,7 +97,7 @@ public class Servidor {
 					@Override
 					public void run() {
 						try {
-							System.out.println("conntainer " + container.getId() + " espera 10s");
+							System.out.println("container " + container.getId() + " espera 10s");
 							Thread.sleep(SEGUNDO);
 							solicitaColeta(container);
 						} catch (InterruptedException e) {
